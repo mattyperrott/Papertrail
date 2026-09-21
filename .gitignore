@@ -1,0 +1,18 @@
+# dependencies and build output
+node_modules/
+dist/
+coverage/
+
+# live account state, logs, backups, archives, locks — never commit
+data/
+
+# secrets
+.env
+
+# local-only (launchd plist carries machine-specific paths)
+launchd/
+.claude/settings.local.json
+artifacts/
+Archive.zip
+*.zip
+.DS_Store

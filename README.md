@@ -4,8 +4,6 @@
 
 There is no live mode. The codebase contains no signer, private key, allowance or order-submission path, and every restart comes up paused behind integrity and reconciliation gates.
 
-![Papertrail command center](docs/images/overview.png)
-
 ## What it does
 
 1. **Discovers** wallets from Polymarket leaderboards (and Arkham, if you have a key), checks that they are recently active, and cross-verifies their P&L and ROI against an independent scanner.
@@ -14,10 +12,6 @@ There is no live mode. The codebase contains no signer, private key, allowance o
 4. **Sizes** every entry through simultaneous allocation against 0.5 % signal, 2 % market, 4 % trader/event and 25 % portfolio caps. Combo markets are refused. Missing books, fees or inventory reject the entry; missing exit liquidity becomes a durable, retried exit intent.
 5. **Manages** open positions continuously — marks, stop-loss, concentration and drawdown limits, horizon exits and verified settlement — even while entries are paused.
 6. **Measures** a shadow-only quantitative challenger alongside the champion: cost-adjusted event edge with 60-day decay, empirical-Bayes shrinkage, block bootstrap, FDR correction, CVaR and fold stability. It never trades; promotion needs the forward-paper, drawdown, stress, accounting, latency and recovery gates in [docs/VALIDATION.md](docs/VALIDATION.md).
-
-| Trader intelligence | Paper ledger |
-|---|---|
-| ![Trader intelligence](docs/images/traders.png) | ![Paper ledger](docs/images/ledger.png) |
 
 ## Quick start
 
